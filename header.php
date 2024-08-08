@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?> data-bs-theme="auto">
 
 <head>
-    <title><?= the_title() ?> | LearningHUB</title>
+    <title><?= the_title() ?></title>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -116,6 +116,9 @@
                     <ul class="navbar-nav mb-2 mb-lg-0 order-1 order-lg-2">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/learninghub/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://learningcentre.gww.gov.bc.ca/learn-at-work-week/">Previous Years</a>
                         </li>
 
                         
