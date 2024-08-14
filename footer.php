@@ -1,17 +1,3 @@
-<div class="bg-secondary-subtle">
-    <div class="container-lg px-lg-5 px-4 pt-0 pb-lg-4 pb-3 bg-light-subtle">
-        <details id="feedback" class="text-primary">
-            <summary>Need help? </summary>
-            <div class="text-body">
-                <p>Have a question about the LearningHUB? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod" class="customize-unpreviewable">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
-                <!-- <p><a href="https://survey.alchemer-ca.com/s3/50120510/8f3f4d590f25" target="_blank" rel="noopener">Give general feedback about the Learning Hub</a>.</p> -->
-            </div>
-        </details>
-    </div>
-</div>
-
-
-
 
 <div id="bcgovfoot" class="bg-gov-blue">
     <footer class="site-footer container-lg py-4 py-lg-5">

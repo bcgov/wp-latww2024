@@ -89,6 +89,11 @@
     color: white !important;
 }
 
+.bg-gov-purple {
+    background-color: var(--gov-secondary-purple) !important;
+    color: white !important;
+}
+
 .bg-gov-green {
     background-color: var(--gov-secondary-green) !important;
     color: white !important;
@@ -400,4 +405,3 @@ details[open]>summary::before {
 #results .col-lg-7 {
     width: 62.5%;
 }
-
