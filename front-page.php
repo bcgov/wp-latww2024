@@ -67,7 +67,7 @@
                         <div class="card mb-2">
                             <div class="card-body">
                                 <h5 class="card-title fs-5">
-                                    <a href="#" class="text-decoration-none stretched-link">Opening and Keynote</a>
+                                    <a href="https://latww2024.virtuallearn.ca/index.php/monday/opening-and-keynote/" class="text-decoration-none stretched-link">Opening and Keynote</a>
                                 </h5>
                                 <p class="card-text fs-6">10&nbsp;am to 11&nbsp;am</p>
                             </div>
@@ -190,7 +190,7 @@
             </div>
             <div class="col-md-4">
                 <div class="d-flex justify-content-center align-items-center">
-                    <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/speakers/LisaSweet-placeholder.png" height="300" width="300" class="rounded-circle shadow-sm mb-3" style="max-width: 20vw;">
+                    <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/speakers/LisaSweet-placeholder.png" height="300" width="300" class="rounded-circle shadow-sm mb-3" alt="Lisa Sweet" style="max-width: 20vw;">
                 </div>
                 <figure>
                     <blockquote class="blockquote">

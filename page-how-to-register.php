@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying all single posts
+ * The template for displaying all single pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -20,8 +20,7 @@ while (have_posts()) :
     <div id="content">
         <div class="d-flex p-4 p-md-5 align-items-center bg-gov-blue bg-gradient" style="height: 12vh; min-height: 100px;">
             <div class="container-lg py-4 py-md-5">
-                <h1 class="text-white title">Recent News: <h1><?php the_title() ?></h1>
-                </h1>
+                <h1 class="text-white title"><?php the_title() ?></h1>
             </div>
         </div>
         <div class="bg-secondary-subtle">
@@ -30,14 +29,14 @@ while (have_posts()) :
 
                     <div class="entry-content">
                         <?php the_content() ?>
+                        Test
                     </div><!-- .entry-content -->
 
                 </article><!-- #post-<?php the_ID(); ?> -->
             </div>
+
         </div>
     </div>
-
-
 <?php
 endwhile; // End of the loop.
 
