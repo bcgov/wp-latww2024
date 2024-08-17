@@ -39,6 +39,9 @@ while (have_posts()) :
                                 <!-- Session Description -->
                                 <div class="flex-grow-1">
                                     <h2>About the session</h2>
+                                    <!-- short description -->
+                                    <p>Lisa Sweet, ADM with BC Corrections, will explore an inspiring and practical example of how the BCPS corporate values guide decisions and enable teams to achieve amazing results.</p>
+                                    <!-- full abstract -->
                                     <p>In 2023, BC Corrections won the Premier's Award for Organizational Excellence with their work on connecting and healing through culture. This work is a clear example of the positive outcomes the value of service aims for. It is also an example of the values of courage and curiosity needed to innovate as we put reconciliation into action. </p>
                                     <p>Lisa will share how the BCPS corporate values guide decisions in this example of the complex work done by the BC Public Service. </p>
                                     <a href="#" class="btn btn-primary">Register</a>
