@@ -99,7 +99,7 @@
     <a class="skip-link screen-reader-text" href="#content">
         Skip to content </a>
     <header id="mainheader" role="banner" class="sticky-top">
-        <nav class="navbar navbar-expand-lg px-3 bg-gov-blue" data-bs-theme="dark" aria-label="<?php esc_attr_e('Primary menu', 'wp-learninghub'); ?>">
+        <nav class="navbar navbar-expand-lg px-3 bg-gov-purple" data-bs-theme="dark" aria-label="<?php esc_attr_e('Primary menu', 'wp-learninghub'); ?>">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon text-white"></span>
@@ -115,13 +115,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0 order-1 order-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/learninghub/">Home</a>
+                            <a class="nav-link" aria-current="page" href="https://latww2024.virtuallearn.ca/index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://learningcentre.gww.gov.bc.ca/learn-at-work-week/">Previous Years</a>
+                            <a class="nav-link" aria-current="page" href="https://latww2024.virtuallearn.ca/index.php/session-schedule/">Session Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="https://latww2024.virtuallearn.ca/index.php/how-to-register/">How to Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://learningcentre.gww.gov.bc.ca/learn-at-work-week/">Past L@WW</a>
                         </li>
 
-                        
+
 
                         <li class="nav-item dropdown">
                             <button class="btn btn-link nav-link ml-3 py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
@@ -154,7 +160,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
             </div>
         </nav>
     </header><!-- #masthead -->
