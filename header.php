@@ -115,13 +115,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0 order-1 order-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="https://latww2024.virtuallearn.ca/index.php">Home</a>
+                            <a class="nav-link" aria-current="page" href="/latww2024/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="https://latww2024.virtuallearn.ca/index.php/session-schedule/">Session Schedule</a>
+                            <a class="nav-link" aria-current="page" href="/latww2024/session-schedule/">Session Schedule</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="https://latww2024.virtuallearn.ca/index.php/how-to-register/">How to Register</a>
+                            <a class="nav-link" aria-current="page" href="/latww2024/how-to-register/">How to Register</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="https://learningcentre.gww.gov.bc.ca/learn-at-work-week/">Past L@WW</a>
