@@ -123,9 +123,9 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="https://latww2024.virtuallearn.ca/index.php/how-to-register/">How to Register</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="https://learningcentre.gww.gov.bc.ca/learn-at-work-week/">Past L@WW</a>
-                        </li>
+                        </li> -->
 
 
 
