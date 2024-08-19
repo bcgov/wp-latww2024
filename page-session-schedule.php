@@ -7,6 +7,10 @@
  * @package WordPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
+ * 
+ * This all super-duper violates DRY as we've got a query for each day of the week
+ * but it will never ever be more than 5 days and I prefer the verbosity to cleverness.
+ * 
  */
 get_header();
 /* Start the Loop */
@@ -37,202 +41,143 @@ while (have_posts()) :
                                 <h2 class="mb-2">Schedule</h2>
                                 <p>Select a session to get more details about the event and register to attend. </p>
                                 <p><strong>All times are shown for the Pacific Time Zone. </strong></p>
-                                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 mb-2">
-                                    <!-- Monday -->
-                                    <div class="col mb-4 mb-lg-1 px-1">
-                                        <h3 class="card-title h4">Monday</h3>
-                                        <h4 class="card-subtitle text-body-secondary mb-2 h5">October 7</h4>
-                                        <div class="d-flex flex-column">
-                                            <div class="card mb-2">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="https://latww2024.virtuallearn.ca/index.php/monday/opening-and-keynote/" class="text-decoration-none stretched-link">Opening and Keynote</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">10&nbsp;am to 11&nbsp;am</p>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="#" class="text-decoration-none stretched-link">'Speak up' culture in the BC Public Service</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">2&nbsp;pm to 3:30&nbsp;pm</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Tuesday -->
-                                    <div class="col mb-4 mb-lg-1 px-1">
-                                        <h3 class="card-title h4">Tuesday</h3>
-                                        <h4 class="card-subtitle text-body-secondary mb-2 h5">October 8</h4>
-                                        <div class="d-flex flex-column">
-                                            <div class="card mb-2">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="#" class="text-decoration-none stretched-link">sessionTitle</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">startTime to endTime</p>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="#" class="text-decoration-none stretched-link">sessionTitle</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">startTime to endTime</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Wednesday -->
-                                    <div class="col mb-4 mb-lg-1 px-1">
-                                        <h3 class="card-title h4">Wednesday</h3>
-                                        <h4 class="card-subtitle text-body-secondary mb-2 h5">October 9</h4>
-                                        <div class="d-flex flex-column">
-                                            <div class="card mb-2">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="#" class="text-decoration-none stretched-link">sessionTitle</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">startTime to endTime</p>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="#" class="text-decoration-none stretched-link">sessionTitle</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">startTime to endTime</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Thursday -->
-                                    <div class="col mb-4 mb-lg-1 px-1">
-                                        <h3 class="card-title h4">Thursday</h3>
-                                        <h4 class="card-subtitle text-body-secondary mb-2 h5">October 10</h4>
-                                        <div class="d-flex flex-column">
-                                            <div class="card mb-2">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="#" class="text-decoration-none stretched-link">sessionTitle</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">startTime to endTime</p>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="#" class="text-decoration-none stretched-link">sessionTitle</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">startTime to endTime</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Friday -->
-                                    <div class="col mb-4 mb-lg-1 px-1">
-                                        <h3 class="card-title h4">Friday</h3>
-                                        <h4 class="card-subtitle text-body-secondary mb-2 h5">October 11</h4>
-                                        <div class="d-flex flex-column">
-                                            <div class="card mb-2">
-                                                <div class="card-body p-2">
-                                                    <h5 class="card-title fs-5">
-                                                        <a href="#" class="text-decoration-none stretched-link">sessionTitle</a>
-                                                    </h5>
-                                                    <p class="card-text fs-6">startTime to endTime</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                                <?php get_template_part('template-parts/schedule') ?>
+
+
                             </div>
                             <div id="sessions" class="mt-5">
                                 <h2>Sessions</h2>
                                 <h3 class="text-bg-secondary rounded px-2 py-1 mt-4">Monday</h3>
                                 <div class="row row-cols-1 row-cols-md-2">
-                                    <div class="col">
-                                        <h4>Opening and Keynote</h4>
-                                        <h5 class="text-dark-emphasis">10 am to 11 am</h5>
-                                        <p>Lisa Sweet, ADM with BC Corrections, will explore an inspiring and practical example of how the BCPS corporate values guide decisions and enable teams to achieve amazing results.</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: Opening and Keynote</a>
-                                    </div>
-                                    <div class="col">
-                                        <h4>'Speak up' culture in the BC Public Service</h4>
-                                        <h5 class="text-dark-emphasis">10 am to 11 am</h5>
-                                        <p>Lisa Sweet, ADM with BC Corrections, will explore an inspiring and practical example of how the BCPS corporate values guide decisions and enable teams to achieve amazing results.</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: Opening and Keynote</a>
-                                    </div>
+                                <?php $monday = get_children( array( 'post_type' => 'page', 'post_parent' => 8, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php if( !empty( $monday ) ) : ?>
+                                <?php foreach ( $monday as $event ) : ?>
+                                <div class="col">
+
+                                    <h4><?= $event->post_title ?></h4>
+                                    <?php $start = get_post_meta($event->ID, 'startTime', TRUE) ?>
+                                    <?php $end = get_post_meta($event->ID, 'endTime', TRUE) ?>
+                                    <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
+                                    <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
+                                    <p><?= $shortDesc ?></p>
+                                    <?php if(!empty($registrationLink)): ?>
+                                    <?php $tt = get_the_title() ?>
+                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php else: ?>
+                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                    <?php endif ?>
+
+                                </div>
+                                <?php endforeach ?>
+                                <?php else: ?>
+                                <p>No events found.</p>
+                                <?php endif ?>
+                                    
                                 </div>
                                 <h3 class="text-bg-secondary rounded px-2 py-1 mt-4">Tuesday</h3>
                                 <div class="row row-cols-1 row-cols-md-2">
-                                    <div class="col">
-                                        <h4>SessionTitle</h4>
-                                        <h5 class="text-dark-emphasis">startTime to endTime</h5>
-                                        <p>shortDesc</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: sessionTitle</a>
-                                    </div>
-                                    <div class="col">
-                                        <h4>SessionTitle</h4>
-                                        <h5 class="text-dark-emphasis">startTime to endTime</h5>
-                                        <p>shortDesc</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: sessionTitle</a>
-                                    </div>
+                                <?php $tuesday = get_children( array( 'post_type' => 'page', 'post_parent' => 17, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php if( !empty( $tuesday ) ) : ?>
+                                <?php foreach ( $tuesday as $event ) : ?>
+                                <div class="col">
+
+                                    <h4><?= $event->post_title ?></h4>
+                                    <?php $start = get_post_meta($event->ID, 'startTime', TRUE) ?>
+                                    <?php $end = get_post_meta($event->ID, 'endTime', TRUE) ?>
+                                    <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
+                                    <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
+                                    <p><?= $shortDesc ?></p>
+                                    <?php if(!empty($registrationLink)): ?>
+                                    <?php $tt = get_the_title() ?>
+                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php else: ?>
+                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                    <?php endif ?>
+
+                                </div>
+                                <?php endforeach ?>
+                                <?php else: ?>
+                                <p>No events found.</p>
+                                <?php endif ?>
                                 </div>
                                 <h3 class="text-bg-secondary rounded px-2 py-1 mt-4">Wednesday</h3>
                                 <div class="row row-cols-1 row-cols-md-2">
-                                    <div class="col">
-                                        <h4>SessionTitle</h4>
-                                        <h5 class="text-dark-emphasis">startTime to endTime</h5>
-                                        <p>shortDesc</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: sessionTitle</a>
-                                    </div>
-                                    <div class="col">
-                                        <h4>SessionTitle</h4>
-                                        <h5 class="text-dark-emphasis">startTime to endTime</h5>
-                                        <p>shortDesc</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: sessionTitle</a>
-                                    </div>
+                                <?php $wednesday = get_children( array( 'post_type' => 'page', 'post_parent' => 19, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php if( !empty( $wednesday ) ) : ?>
+                                <?php foreach ( $wednesday as $event ) : ?>
+                                <div class="col">
+
+                                    <h4><?= $event->post_title ?></h4>
+                                    <?php $start = get_post_meta($event->ID, 'startTime', TRUE) ?>
+                                    <?php $end = get_post_meta($event->ID, 'endTime', TRUE) ?>
+                                    <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
+                                    <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
+                                    <p><?= $shortDesc ?></p>
+                                    <?php if(!empty($registrationLink)): ?>
+                                    <?php $tt = get_the_title() ?>
+                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php else: ?>
+                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                    <?php endif ?>
+
+                                </div>
+                                <?php endforeach ?>
+                                <?php else: ?>
+                                <p>No events found.</p>
+                                <?php endif ?>
                                 </div>
                                 <h3 class="text-bg-secondary rounded px-2 py-1 mt-4">Thursday</h3>
                                 <div class="row row-cols-1 row-cols-md-2">
-                                    <div class="col">
-                                        <h4>SessionTitle</h4>
-                                        <h5 class="text-dark-emphasis">startTime to endTime</h5>
-                                        <p>shortDesc</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: sessionTitle</a>
-                                    </div>
-                                    <div class="col">
-                                        <h4>SessionTitle</h4>
-                                        <h5 class="text-dark-emphasis">startTime to endTime</h5>
-                                        <p>shortDesc</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: sessionTitle</a>
-                                    </div>
+                                <?php $thursday = get_children( array( 'post_type' => 'page', 'post_parent' => 21, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php if( !empty( $thursday ) ) : ?>
+                                <?php foreach ( $thursday as $event ) : ?>
+                                <div class="col">
+
+                                    <h4><?= $event->post_title ?></h4>
+                                    <?php $start = get_post_meta($event->ID, 'startTime', TRUE) ?>
+                                    <?php $end = get_post_meta($event->ID, 'endTime', TRUE) ?>
+                                    <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
+                                    <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
+                                    <p><?= $shortDesc ?></p>
+                                    <?php if(!empty($registrationLink)): ?>
+                                    <?php $tt = get_the_title() ?>
+                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php else: ?>
+                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                    <?php endif ?>
+
+                                </div>
+                                <?php endforeach ?>
+                                <?php else: ?>
+                                <p>No events found.</p>
+                                <?php endif ?>
                                 </div>
                                 <h3 class="text-bg-secondary rounded px-2 py-1 mt-4">Friday</h3>
                                 <div class="row row-cols-1 row-cols-md-2">
-                                    <div class="col">
-                                        <h4>SessionTitle</h4>
-                                        <h5 class="text-dark-emphasis">startTime to endTime</h5>
-                                        <p>shortDesc</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: sessionTitle</a>
-                                    </div>
-                                    <div class="col">
-                                        <h4>SessionTitle</h4>
-                                        <h5 class="text-dark-emphasis">startTime to endTime</h5>
-                                        <p>shortDesc</p>
-                                        <!-- short description -->
-                                        <a href="#" class="btn btn-primary">Register: sessionTitle</a>
-                                    </div>
+                                <?php $friday = get_children( array( 'post_type' => 'page', 'post_parent' => 23, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php if( !empty( $friday ) ) : ?>
+                                <?php foreach ( $friday as $event ) : ?>
+                                <div class="col">
+
+                                    <h4><?= $event->post_title ?></h4>
+                                    <?php $start = get_post_meta($event->ID, 'startTime', TRUE) ?>
+                                    <?php $end = get_post_meta($event->ID, 'endTime', TRUE) ?>
+                                    <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
+                                    <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
+                                    <p><?= $shortDesc ?></p>
+                                    <?php if(!empty($registrationLink)): ?>
+                                    <?php $tt = get_the_title() ?>
+                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php else: ?>
+                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                    <?php endif ?>
+
+                                </div>
+                                <?php endforeach ?>
+                                <?php else: ?>
+                                <p>No events found.</p>
+                                <?php endif ?>
                                 </div>
                             </div>
                         </div>

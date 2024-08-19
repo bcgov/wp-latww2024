@@ -13,12 +13,27 @@ get_header();
 /* Start the Loop */
 while (have_posts()) :
     the_post();
+
+$start = get_post_meta(get_the_ID(), 'startTime', TRUE);
+$end = get_post_meta(get_the_ID(), 'endTime', TRUE);
+$dayOfWeek = get_post_meta(get_the_ID(), 'dayOfWeek', TRUE);
+$shortDesc = get_post_meta(get_the_ID(), 'shortDesc', TRUE);
+$abstract = get_post_meta(get_the_ID(), 'abstract', TRUE);
+$platform = get_post_meta(get_the_ID(), 'platform', TRUE);
+$registrationLink = get_post_meta(get_the_ID(), 'registrationLink', TRUE);
+$speakerOne = get_post_meta(get_the_ID(), 'speakerOne', TRUE);
+$speakerOneTitle = get_post_meta(get_the_ID(), 'speakerOneTitle', TRUE);
+$speakerOneImg = get_post_meta(get_the_ID(), 'speakerOneImg', TRUE);
+$slideDeck = get_post_meta(get_the_ID(), 'slideDeck', TRUE);
+$workshopFiles = get_post_meta(get_the_ID(), 'workshopFiles', TRUE);
 ?>
+
+
     <div id="content">
-        <div class="d-flex p-4 p-md-5 align-items-center bg-gov-blue bg-gradient" style="height: 12vh; min-height: 100px;">
-            <div class="container-lg py-4 py-md-5">
+        <div class="d-flex p-4 p-md-5 align-items-center bg-gov-blue bg-gradient" style="min-height: 100px;">
+            <div class="container-lg">
                 <h1 class="text-white title"><?php the_title() ?></h1>
-                <h2 class="text-white h3">Monday, October 7 | 10 am to 11 am</h2>
+                <h2 class="text-white h3"><?= $dayOfWeek ?> | <?= $start ?> to <?= $end ?></h2>
             </div>
         </div>
         <div class="bg-secondary-subtle">
@@ -40,11 +55,15 @@ while (have_posts()) :
                                 <div class="flex-grow-1">
                                     <h2>About the session</h2>
                                     <!-- short description -->
-                                    <p>Lisa Sweet, ADM with BC Corrections, will explore an inspiring and practical example of how the BCPS corporate values guide decisions and enable teams to achieve amazing results.</p>
+                                    <p><?= $shortDesc ?></p>
                                     <!-- full abstract -->
-                                    <p>In 2023, BC Corrections won the Premier's Award for Organizational Excellence with their work on connecting and healing through culture. This work is a clear example of the positive outcomes the value of service aims for. It is also an example of the values of courage and curiosity needed to innovate as we put reconciliation into action. </p>
-                                    <p>Lisa will share how the BCPS corporate values guide decisions in this example of the complex work done by the BC Public Service. </p>
-                                    <a href="#" class="btn btn-primary">Register</a>
+                                    <p><?= the_content() ?></p>
+                                    <?php if(!empty($registrationLink)): ?>
+                                    <?php $tt = get_the_title() ?>
+                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php else: ?>
+                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                    <?php endif ?>
                                     <p class="fs-6 mt-3">
                                         <span class="icon-svg baseline-svg">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -58,45 +77,54 @@ while (have_posts()) :
                                         <div class="card-body">
                                             <h3 class="card-title">Session at a glance</h3>
                                             <ul class="list-unstyled mb-0">
-                                                <li><strong>Date:</strong> Monday, October 7</li>
-                                                <li><strong>Start time:</strong> 10 am</li>
-                                                <li><strong>End time:</strong> 11 am</li>
-                                                <li><strong>Platform:</strong> MS Teams</li>
+                                                <li><strong>Date:</strong> <?= $dayOfWeek ?></li>
+                                                <li><strong>Start time:</strong> <?= $start ?></li>
+                                                <li><strong>End time:</strong> <?= $end ?></li>
+                                                <li><strong>Platform:</strong> <?= $platform ?></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <h4>Session Materials</h4>
-
-                                    <p><a href="#" class="btn btn-secondary">Download Slide Deck</a></p>
-                                    <p><a href="#$_FILES" class="btn btn-secondary">Download Workshop Files</a></p>
+                                    <?php if($slideDeck || $workshopFiles): ?>
+                                    <?php if($slideDeck): ?>
+                                    <p><a href="<?= $slideDeck ?>" class="btn btn-secondary">Download Slide Deck</a></p>
+                                    <?php endif ?>
+                                    <?php if($workshopFiles): ?>
+                                    <p><a href="<?= $workshopFiles ?>" class="btn btn-secondary">Download Workshop Files</a></p>
+                                    <?php endif ?>
+                                    <?php else: ?>
+                                        <p>No materials posted yet.</p>
+                                    <?php endif ?>
                                 </div>
                             </div>
                             <div class="my-4"><!-- Speakers Section -->
+                                <?php if($speakerOne || $speakerTwo || $speakerThree): ?>
                                 <h2>Speakers</h2>
                                 <div class="d-flex gap-5 mt-3 text-center">
+                                    <?php if($speakerOne): ?>
                                     <div class="flex-column">
-                                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/speakers/LisaSweet-placeholder.png" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="Lisa Sweet" style="max-width: 15vw;">
-                                        <h4>Lisa Sweet</h4>
-                                        <p class="mt-1">ADM, Corrections Branch (PSSG)</p>
+                                        <img src="<?= $speakerOneImg ?>" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="<?= $speakerOne ?>" style="max-width: 15vw;">
+                                        <h4><?= $speakerOne ?></h4>
+                                        <p class="mt-1"><?= $speakerOneTitle ?></p>
                                     </div>
+                                    <?php endif ?>
+                                    <?php if($speakerTwo): ?>
                                     <div class="flex-column">
-                                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/speakers/LisaSweet-placeholder.png" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="Lisa Sweet" style="max-width: 15vw;">
-                                        <h4>Lisa Sweet</h4>
-                                        <p class="mt-1">ADM, Corrections Branch (PSSG)</p>
+                                        <img src="<?= $speakerTwoImg ?>" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="<?= $speakerTwo ?>" style="max-width: 15vw;">
+                                        <h4><?= $speakerTwo ?></h4>
+                                        <p class="mt-1"><?= $speakerTwoTitle ?></p>
                                     </div>
+                                    <?php endif ?>
+                                    <?php if($speakerThree): ?>
                                     <div class="flex-column">
-                                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/speakers/LisaSweet-placeholder.png" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="Lisa Sweet" style="max-width: 15vw;">
-                                        <h4>Lisa Sweet</h4>
-                                        <p class="mt-1">ADM, Corrections Branch (PSSG)</p>
+                                        <img src="<?= $speakerThreeImg ?>" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="<?= $speakerThree ?>" style="max-width: 15vw;">
+                                        <h4><?= $speakerThree ?></h4>
+                                        <p class="mt-1"><?= $speakerThreeTitle ?></p>
                                     </div>
+                                    <?php endif ?>
                                 </div>
-                                <!-- Add more speaker sections as needed -->
-                                <!-- Additional info added in WP? -->
-                                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                    <div class="entry-content">
-                                        <?php the_content() ?>
-                                    </div><!-- .entry-content -->
-                                </article><!-- #post-<?php the_ID(); ?> -->
+                                <?php endif ?>
+                                
 
 
                                 <hr>
@@ -107,9 +135,9 @@ while (have_posts()) :
                                 <p>This session will be recorded and will be available for viewing after Learn @ Work Week. The video will be posted here as well as listed in the LearningHUB.</p>
                                 <!-- alternative -->
                                 <!-- <p>This session will not be recorded due to copyrighted content.</p> -->
-                                <div class="ratio ratio-16x9">
+                                <!-- <div class="ratio ratio-16x9">
                                     <iframe width="590" height="315" src="https://www.youtube.com/embed/UvhY8Q-01Rg?si=1sGvFCsQZ_esQZ7i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
