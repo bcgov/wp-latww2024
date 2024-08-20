@@ -26,6 +26,7 @@ while (have_posts()) :
     $speakerOneImg = get_post_meta(get_the_ID(), 'speakerOneImg', TRUE);
     $slideDeck = get_post_meta(get_the_ID(), 'slideDeck', TRUE);
     $workshopFiles = get_post_meta(get_the_ID(), 'workshopFiles', TRUE);
+    $toBeRecorded = get_post_meta(get_the_ID(), 'toBeRecorded', TRUE);
 ?>
 
 
@@ -130,12 +131,15 @@ while (have_posts()) :
                                 <p>All sessions include ASL interpretation and CART services.</p>
                                 <p>If you need any accommodations to participate in L@WW, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">submit an AskMyHR service request</a> using the category "Learning Centre".</p>
                                 <h3>Session Recording</h3>
+                                <?php if(!empty($toBeRecorded)): ?>
                                 <p>This session will be recorded and will be available for viewing after Learn @ Work Week. The video will be posted here as well as listed in the LearningHUB.</p>
-                                <!-- alternative -->
-                                <!-- <p>This session will not be recorded due to copyrighted content.</p> -->
                                 <!-- <div class="ratio ratio-16x9">
                                     <iframe width="590" height="315" src="https://www.youtube.com/embed/UvhY8Q-01Rg?si=1sGvFCsQZ_esQZ7i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </div> -->
+                                <?php else: ?>
+                                <p>This session will not be recorded due to copyrighted content.</p>
+                                <?php endif ?>
+                                
                             </div>
                         </div>
 
