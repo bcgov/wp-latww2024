@@ -23,15 +23,16 @@ while (have_posts()) :
         <div class="bg-secondary-subtle">
             <div class="container-lg p-lg-5 p-4 bg-light-subtle">
                 <h2>Registration tips</h2>
+                
                 <ul>
-                    <li>The L@WW website provides direct links to register for each session in the learning system. You do not need formal approval from your supervisor to register.</li>
+                    <li>The L@WW website provides direct links to register for each session in the learning system. You do not need formal approval from your supervisor to register for most sessions. Fierce Foundations does require supervisor approval.</li>
                     <li>All sessions are fully virtual, taking place on MS Teams or Zoom.</li>
                     <li>If you are unable to attend a session, please drop the course in the learning system as soon as possible. This allows another employee to participate in the learning.</li>
-                    <li>Registration closes the morning of the session day.</li>
+                    <li>Registration closes the morning of the session day. Registration for Fierce Foundations closes 2 days before the session.</li>
                 </ul>
                 <h3>Accessibility</h3>
                 <p>All sessions include ASL interpretation and CART services.</p>
-                <p>If you need any accommodations to participate in L@WW, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">submit an AskMyHR service request</a> using the category "Learning Centre".</p>
+                <p>If you need any accommodations to participate in L@WW, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">submit an AskMyHR service request</a> using the category "Learning Centre" as soon as possible.</p>
                 <div class="card card-body mt-5">
                     <h2>Adding a Class to your Outlook Calendar</h2>
                     <p>The following instructions will show you how to import a class into your Outlook calendar. For general instructions on using the Learning System, please visit the <a href="https://learningcentre.gww.gov.bc.ca/learning-system-help/" target="_blank" class="link-text">Learning System Help</a> page. </p>
@@ -45,9 +46,9 @@ while (have_posts()) :
                     <ol>
                         <li> Go to your <a href="https://learning.gov.bc.ca/psc/CHIPSPLM/EMPLOYEE/ELM/c/LM_OD_EMPLOYEE_FL.LM_MYCOURSES_FL.GBL?Page=LM_MYCOURSES_FL&amp;Action=U&amp;ForceSearch=Y&amp;TargetFrameName=None" class="link-text" target="_blank">My Learning - Current</a> and select the class you'd like to add to your calendar </li>
                         <div class="p-2">
-                            <img class="shadow-sm mb-1" src="https://gww.bcpublicservice.gov.bc.ca/learning/latww/latww2022/guides/add-to-calendar/images/laww-tile.png" alt="Selecting a class tile">
+                            <img class="shadow-sm mb-1" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/laww-tile.png" alt="Selecting a class tile">
                         </div>
-                        <li>Near the upper right corner of the My Course Progress page, select <img class="shadow-sm mx-2" src="https://gww.bcpublicservice.gov.bc.ca/learning/latww/latww2022/guides/add-to-calendar/images/add-to-calendar.png" alt="Add to calendar">
+                        <li>Near the upper right corner of the My Course Progress page, select <img class="shadow-sm mx-2" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/add-to-calendar.png" alt="Add to calendar">
                             to download an iCalendar (.ics) file </li>
                         <li>Open the file (either from your browser, or your Downloads folder) </li>
                     </ol>

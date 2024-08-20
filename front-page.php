@@ -4,8 +4,8 @@
     <div class="d-flex p-4 p-md-5 align-items-center" style="height: 12rem; background: linear-gradient(87deg, rgba(95,33,103,1) 9%, rgba(151, 27, 47,1) 50%, rgba(227,168,43,1) 91%);">
         <div class="container-lg py-4 py-md-5">
             <h1 class="text-white">From Values to Practice</h1>
-            <h2 class="text-white h3 mb-md-4">Learn @ Work Week: October 7 to 11, 2024</h2>
-            <div class="d-none d-md-flex gap-2 gap-lg-3 flex-no-wrap pt-3 mb-5 position-absolute justify-content-start" style="top: 22vh;">
+            <h2 class="text-white h3">Learn @ Work Week: October 7 to 11, 2024</h2>
+            <div class="d-none d-md-flex gap-2 gap-lg-3 flex-no-wrap pt-3 justify-content-start" style="margin-bottom: -5rem;">
                 <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/integrity-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
                 <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/curiosity-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
                 <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/service-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
@@ -67,9 +67,9 @@
             <div class="col-md-8">
                 <h3>L@WW Keynote: From Values to Results</h3>
                 <h4 class="text-secondary-emphasis">Speaker: Lisa Sweet, ADM Corrections Branch, PSSG</h4>
-                <p>Lisa Sweet, ADM with BC Corrections, will explore an inspiring and practical example of how the BCPS corporate values guide decisions and enable teams to achieve amazing results.
-                </p>
-                <p><a href="#">Full keynote details</a></p>
+                <!-- <p>Lisa Sweet, ADM with BC Corrections, will explore an inspiring and practical example of how the BCPS corporate values guide decisions and enable teams to achieve amazing results.
+                </p> -->
+                <p>More information coming soon.</p>
                 <a href="#" class="btn btn-primary">Register</a>
             </div>
             <div class="col-md-4">
@@ -87,16 +87,19 @@
                 </figure>
             </div>
         </div>
-        <!-- values posters -->
-        <div class="mt-5 d-flex gap-2 justify-content-between">
-            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/IntegrityPosterNoText.jpg" alt="Integrity graphic" height="600" width="800" class="h-100 w-auto shadow" style="max-width: 11vw;">
-            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/CuriosityPosterNoText.jpg"  alt="Curiosity graphic" height="600" width="800" class="h-100 w-auto shadow" style="max-width: 11vw;">
-            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/ServicePosterNoText.jpg"  alt="Service graphic" height="600" width="800" class="h-100 w-auto shadow" style="max-width: 11vw;">
-            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/PassionPosterNoText.jpg"  alt="Passion graphic" height="600" width="800" class="h-100 w-auto shadow" style="max-width: 11vw;">
-            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/TeamworkPosterNoText.jpg"  alt="Teamwork graphic" height="600" width="800" class="h-100 w-auto shadow" style="max-width: 11vw;">
-            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/AccountabilityPosterNoText.jpg" alt="Accountability graphic" height="600" width="800" class="h-100 w-auto shadow" style="max-width: 11vw;">
-            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/CouragePosterNoText.jpg"  alt="Courage graphic" height="600" width="800" class="h-100 w-auto shadow" style="max-width: 11vw;">
+
+
+    </div> <!-- values posters -->
+    <div class="container-xl p-4 p-md-5">
+        <div class="d-flex gap-3 justify-content-between">
+            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/IntegrityPosterNoText.jpg" alt="Integrity graphic" height="600" width="800" class="h-100 w-auto" style="max-width: 12%;">
+            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/CuriosityPosterNoText.jpg" alt="Curiosity graphic" height="600" width="800" class="h-100 w-auto" style="max-width: 12%;">
+            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/ServicePosterNoText.jpg" alt="Service graphic" height="600" width="800" class="h-100 w-auto" style="max-width: 12%;">
+            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/PassionPosterNoText.jpg" alt="Passion graphic" height="600" width="800" class="h-100 w-auto" style="max-width: 12%;">
+            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/TeamworkPosterNoText.jpg" alt="Teamwork graphic" height="600" width="800" class="h-100 w-auto" style="max-width: 12%;">
+            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/AccountabilityPosterNoText.jpg" alt="Accountability graphic" height="600" width="800" class="h-100 w-auto" style="max-width: 12%;">
+            <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/CouragePosterNoText.jpg" alt="Courage graphic" height="600" width="800" class="h-100 w-auto" style="max-width: 12%;">
         </div>
     </div>
-   
+
     <?php get_footer() ?>
