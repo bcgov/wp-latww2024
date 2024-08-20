@@ -6,7 +6,7 @@
                     <h4 class="card-subtitle text-body-secondary mb-2 h5">October 7</h4>
                     <div class="d-flex flex-column">
                         
-                        <?php $monday = get_children( array( 'post_type' => 'page', 'post_parent' => 8, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                        <?php $monday = get_children( array( 'post_type' => 'page', 'post_parent' => 8, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                         <?php if( !empty( $monday ) ) : ?>
                         <?php foreach ( $monday as $event ) : ?>
                         <div class="card mb-2">
@@ -31,7 +31,7 @@
                     <h3 class="card-title h4">Tuesday</h3>
                     <h4 class="card-subtitle text-body-secondary mb-2 h5">October 8</h4>
                     <div class="d-flex flex-column">
-                        <?php $tuesday = get_children( array( 'post_type' => 'page', 'post_parent' => 17, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                        <?php $tuesday = get_children( array( 'post_type' => 'page', 'post_parent' => 17, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                         <?php if( !empty( $tuesday ) ) : ?>
                         <?php foreach ( $tuesday as $event ) : ?>
                         <div class="card mb-2">
@@ -55,7 +55,7 @@
                     <h3 class="card-title h4">Wednesday</h3>
                     <h4 class="card-subtitle text-body-secondary mb-2 h5">October 9</h4>
                     <div class="d-flex flex-column">
-                        <?php $wednesday = get_children( array( 'post_type' => 'page', 'post_parent' => 19, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                        <?php $wednesday = get_children( array( 'post_type' => 'page', 'post_parent' => 19, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                         <?php if( !empty( $wednesday ) ) : ?>
                         <?php foreach ( $wednesday as $event ) : ?>
                         <div class="card mb-2">
@@ -79,7 +79,7 @@
                     <h3 class="card-title h4">Thursday</h3>
                     <h4 class="card-subtitle text-body-secondary mb-2 h5">October 10</h4>
                     <div class="d-flex flex-column">
-                        <?php $thursday = get_children( array( 'post_type' => 'page', 'post_parent' => 21, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                        <?php $thursday = get_children( array( 'post_type' => 'page', 'post_parent' => 21, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                         <?php if( !empty( $thursday ) ) : ?>
                         <?php foreach ( $thursday as $event ) : ?>
                         <div class="card mb-2">
@@ -103,7 +103,7 @@
                     <h3 class="card-title h4">Friday</h3>
                     <h4 class="card-subtitle text-body-secondary mb-2 h5">October 11</h4>
                     <div class="d-flex flex-column">
-                        <?php $friday = get_children( array( 'post_type' => 'page', 'post_parent' => 23, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                        <?php $friday = get_children( array( 'post_type' => 'page', 'post_parent' => 23, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                         <?php if( !empty( $friday ) ) : ?>
                         <?php foreach ( $friday as $event ) : ?>
                         <div class="card mb-2">
