@@ -50,7 +50,7 @@ while (have_posts()) :
                                 <h2>Sessions</h2>
                                 <h3 class="text-bg-secondary rounded p-2 mt-4">Monday</h3>
                                 <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $monday = get_children( array( 'post_type' => 'page', 'post_parent' => 8, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php $monday = get_children( array( 'post_type' => 'page', 'post_parent' => 8, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                                 <?php if( !empty( $monday ) ) : ?>
                                 <?php foreach ( $monday as $event ) : ?>
                                 <div class="col">
@@ -77,7 +77,7 @@ while (have_posts()) :
                                 </div>
                                 <h3 class="text-bg-secondary rounded p-2 mt-4">Tuesday</h3>
                                 <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $tuesday = get_children( array( 'post_type' => 'page', 'post_parent' => 17, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php $tuesday = get_children( array( 'post_type' => 'page', 'post_parent' => 17, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                                 <?php if( !empty( $tuesday ) ) : ?>
                                 <?php foreach ( $tuesday as $event ) : ?>
                                 <div class="col">
@@ -103,7 +103,7 @@ while (have_posts()) :
                                 </div>
                                 <h3 class="text-bg-secondary rounded p-2 mt-4">Wednesday</h3>
                                 <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $wednesday = get_children( array( 'post_type' => 'page', 'post_parent' => 19, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php $wednesday = get_children( array( 'post_type' => 'page', 'post_parent' => 19, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                                 <?php if( !empty( $wednesday ) ) : ?>
                                 <?php foreach ( $wednesday as $event ) : ?>
                                 <div class="col">
@@ -129,7 +129,7 @@ while (have_posts()) :
                                 </div>
                                 <h3 class="text-bg-secondary rounded p-2 mt-4">Thursday</h3>
                                 <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $thursday = get_children( array( 'post_type' => 'page', 'post_parent' => 21, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php $thursday = get_children( array( 'post_type' => 'page', 'post_parent' => 21, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                                 <?php if( !empty( $thursday ) ) : ?>
                                 <?php foreach ( $thursday as $event ) : ?>
                                 <div class="col">
@@ -155,7 +155,7 @@ while (have_posts()) :
                                 </div>
                                 <h3 class="text-bg-secondary rounded p-2 mt-4">Friday</h3>
                                 <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $friday = get_children( array( 'post_type' => 'page', 'post_parent' => 23, 'orderby' => 'postorder', 'order' => 'ASC') ) ?>
+                                <?php $friday = get_children( array( 'post_type' => 'page', 'post_parent' => 23, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
                                 <?php if( !empty( $friday ) ) : ?>
                                 <?php foreach ( $friday as $event ) : ?>
                                 <div class="col">
