@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col-md-8">
                 <?php $keynote = get_page(10) ?>
-                <h3><?= $keynote->post_title ?></h3>
+                <h3><a class="text-decoration-none" href="/latww2024/monday/<?= $keynote->post_name ?>"><?= $keynote->post_title ?></a></h3>
                 <h4 class="text-secondary-emphasis">Speaker: Lisa Sweet, ADM Corrections Branch, PSSG</h4>
                 <p><?= $keynote->shortDesc ?></p>
                 <?php if (!empty($keynote->registrationLink)): ?>
