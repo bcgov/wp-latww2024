@@ -65,7 +65,7 @@ while (have_posts()) :
                                     <?php $tt = get_the_title() ?>
                                     <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                        <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
@@ -92,7 +92,7 @@ while (have_posts()) :
                                     <?php $tt = get_the_title() ?>
                                     <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                        <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
@@ -118,7 +118,7 @@ while (have_posts()) :
                                     <?php $tt = get_the_title() ?>
                                     <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                        <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
@@ -144,7 +144,7 @@ while (have_posts()) :
                                     <?php $tt = get_the_title() ?>
                                     <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                        <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
@@ -170,7 +170,7 @@ while (have_posts()) :
                                     <?php $tt = get_the_title() ?>
                                     <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-warning">Not open for registration yet.</div>
+                                        <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
