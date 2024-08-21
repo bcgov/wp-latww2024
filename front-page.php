@@ -29,7 +29,7 @@
                     <li>Create familiarity with the corporate values: Integrity, Curiosity, Service, Passion, Teamwork, Accountability, Courage</li>
                     <li>Hear employee experiences and explore lessons learned from putting our corporate values into practice</li>
                     <li>Trace connections between the big picture values and your day-to-day actions</li>
-                    <li>Gain practical knowledge and skills to help embody our values and build a values-driven BCPS culture</li>
+                    <li>Gain practical knowledge and skills to help embody our values and build a values-driven BC Public Service culture</li>
                 </ul>
                 <!-- Event Description Section -->
             </div>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <h4 class="fs-5">BCPS Corporate Values</h4>
+                    <h4 class="fs-5">Our Corporate Values</h4>
                     <p class="fs-6 mb-1">Need a quick refresher on the corporate values? Check out this short video.</p>
                     <div class="ratio ratio-16x9">
                         <iframe width="590" height="315" src="https://www.youtube.com/embed/UvhY8Q-01Rg?si=1sGvFCsQZ_esQZ7i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -65,26 +65,32 @@
     <div class="container-lg p-4 p-md-5">
         <div class="row">
             <div class="col-md-8">
-                <h3>L@WW Keynote: From Values to Results</h3>
+                <?php $keynote = get_page(10) ?>
+                <h3><?= $keynote->post_title ?></h3>
                 <h4 class="text-secondary-emphasis">Speaker: Lisa Sweet, ADM Corrections Branch, PSSG</h4>
-                <!-- <p>Lisa Sweet, ADM with BC Corrections, will explore an inspiring and practical example of how the BCPS corporate values guide decisions and enable teams to achieve amazing results.
-                </p> -->
-                <p>More information coming soon.</p>
-                <a href="#" class="btn btn-primary">Register</a>
+                <p><?= $keynote->shortDesc ?></p>
+                <?php if (!empty($keynote->registrationLink)): ?>
+                    <?php $tt = $keynote->post_name ?>
+                    <a href="<?= $keynote->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                <?php else: ?>
+                    <div class="alert alert-secondary">Not open for registration yet.</div>
+                <?php endif ?>
             </div>
             <div class="col-md-4">
                 <div class="d-flex justify-content-center align-items-center">
-                    <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/speakers/LisaSweet-placeholder.png" height="300" width="300" class="rounded-circle shadow-sm mb-3" alt="Lisa Sweet" style="max-width: 20vw;">
+                    <img src="<?= $keynote->speakerOneImg ?>" height="300" width="300" class="rounded-circle shadow-sm mb-3" alt="<?= $keynote->speakerOne ?>" style="max-width: 20vw;">
                 </div>
+                <?php if(!empty($keynote->speakerOneQuote)): ?>
                 <figure>
                     <blockquote class="blockquote">
-                        <p>"At the heart of everything we do is the belief that people can change."</p>
+                        <p><?= $keynote->speakerOneQuote ?></p>
                     </blockquote>
                     <figcaption class="blockquote-footer text-center">
-                        Lisa Sweet <br>
-                        <cite title="Source Title">BC Corrections Profile 2020</cite>
+                        <?= $keynote->speakerOne ?><br>
+                        <cite title="Source Title"><?= $keynote->speakerOneQuoteSource ?></cite>
                     </figcaption>
                 </figure>
+                <?php endif ?>
             </div>
         </div>
 
