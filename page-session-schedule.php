@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all single pages
  *
@@ -19,40 +20,36 @@ while (have_posts()) :
 ?>
     <div id="content">
         <div class="d-flex p-4 p-md-5 align-items-center bg-gov-blue bg-gradient" style="height: 12vh; min-height: 100px;">
-            <div class="container-lg py-4 py-md-5">
+            <div class="container-lg py-4 py-lg-5">
                 <h1 class="text-white title"><?php the_title() ?></h1>
             </div>
         </div>
         <div class="bg-secondary-subtle">
-            <div class="container-lg py-md-5 py-4 ps-3 pe-4 pe-md-5 bg-light-subtle">
-                <div class="d-flex justify-content-between gap-5">
-                    <div class="d-none d-md-flex flex-column gap-3 flex-no-wrap flex-shrink-0 flex-grow-0">
-                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/integrity-round.png" height="90" width="90" style="max-width: 8vw; max-height: 8vw;" class="object-fit-contain rounded-circle shadow-sm">
-                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/curiosity-round.png" height="90" width="90" style="max-width: 8vw; max-height: 8vw;" class="object-fit-contain rounded-circle shadow-sm">
-                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/service-round.png" height="90" width="90" style="max-width: 8vw; max-height: 8vw;" class="object-fit-contain rounded-circle shadow-sm">
-                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/passion-round.png" height="90" width="90" style="max-width: 8vw; max-height: 8vw;" class="object-fit-contain rounded-circle shadow-sm">
-                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/teamwork-round.png" height="90" width="90" style="max-width: 8vw; max-height: 8vw;" class="object-fit-contain rounded-circle shadow-sm">
-                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/accountability-round.png" height="90" width="90" style="max-width: 8vw; max-height: 8vw;" class="object-fit-contain rounded-circle shadow-sm">
-                        <img src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/courage-round.png" height="90" width="90" style="max-width: 8vw; max-height: 8vw;" class="object-fit-contain rounded-circle shadow-sm">
-                    </div>
-                    <div class="flex-grow-1 d-flex gap-5">
-                        <div class="flex-column">
-                            <div id="schedule">
-                                <h2 class="mb-2">Schedule</h2>
-                                <p>Select a session to get more details about the event and register to attend. </p>
-                                <p><strong>All times are shown for the Pacific Time Zone. </strong></p>
-                                
-                                <?php get_template_part('template-parts/schedule') ?>
+            <div class="container-lg py-lg-5 p-4 px-lg-5 bg-light-subtle">
+                <div id="schedule">
+                    <h2 class="mb-2">Schedule</h2>
+                    <p>Select a session to get more details about the event and register to attend. </p>
+                    <p><strong>All times are shown for the Pacific Time Zone. </strong></p>
 
+                    <?php get_template_part('template-parts/schedule') ?>
 
-                            </div>
-                            <div id="sessions" class="mt-md-5">
-                                <h2>Sessions</h2>
-                                <h3 class="text-bg-secondary rounded p-2 mt-4">Monday</h3>
-                                <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $monday = get_children( array( 'post_type' => 'page', 'post_parent' => 8, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
-                                <?php if( !empty( $monday ) ) : ?>
-                                <?php foreach ( $monday as $event ) : ?>
+                </div>
+                <div class="d-none d-md-flex gap-2 gap-lg-3 flex-no-wrap py-3 justify-content-center">
+                    <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/integrity-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
+                    <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/curiosity-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
+                    <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/service-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
+                    <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/passion-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
+                    <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/teamwork-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
+                    <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/accountability-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
+                    <img alt="" src="https://learn.bcpublicservice.gov.bc.ca/latww/latww2024/img/values/courage-round.png" height="90" width="90" style="max-width: 11vw; max-height: 11vw;" class="object-fit-contain rounded-circle shadow-sm">
+                </div>
+                <div id="sessions" class="mt-lg-4">
+                    <h2>Sessions</h2>
+                    <h3 class="text-bg-secondary rounded p-2 mt-4">Monday</h3>
+                    <div class="row mx-0 row-cols-1 row-cols-md-2 mt-3">
+                        <?php $monday = get_children(array('post_type' => 'page', 'post_parent' => 8, 'orderby' => 'menu_order', 'order' => 'ASC')) ?>
+                        <?php if (!empty($monday)) : ?>
+                            <?php foreach ($monday as $event) : ?>
                                 <div class="col">
 
                                     <h4><a class="text-decoration-none" href="/latww2024/monday/<?= $event->post_name ?>"><?= $event->post_title ?></a></h4>
@@ -61,25 +58,25 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if(!empty($registrationLink)): ?>
-                                    <?php $tt = get_the_title() ?>
-                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php if (!empty($registrationLink)): ?>
+                                        <?php $tt = get_the_title() ?>
+                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
                                         <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
-                                <?php endforeach ?>
-                                <?php else: ?>
-                                <p>No events found.</p>
-                                <?php endif ?>
-                                    
-                                </div>
-                                <h3 class="text-bg-secondary rounded p-2 mt-4">Tuesday</h3>
-                                <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $tuesday = get_children( array( 'post_type' => 'page', 'post_parent' => 17, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
-                                <?php if( !empty( $tuesday ) ) : ?>
-                                <?php foreach ( $tuesday as $event ) : ?>
+                            <?php endforeach ?>
+                        <?php else: ?>
+                            <p>No events found.</p>
+                        <?php endif ?>
+
+                    </div>
+                    <h3 class="text-bg-secondary rounded p-2 mt-4">Tuesday</h3>
+                    <div class="row row-cols-1 row-cols-md-2 mt-3">
+                        <?php $tuesday = get_children(array('post_type' => 'page', 'post_parent' => 17, 'orderby' => 'menu_order', 'order' => 'ASC')) ?>
+                        <?php if (!empty($tuesday)) : ?>
+                            <?php foreach ($tuesday as $event) : ?>
                                 <div class="col">
 
                                     <h4><a class="text-decoration-none" href="/latww2024/tuesday/<?= $event->post_name ?>"><?= $event->post_title ?></a></h4>
@@ -88,24 +85,24 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if(!empty($registrationLink)): ?>
-                                    <?php $tt = get_the_title() ?>
-                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php if (!empty($registrationLink)): ?>
+                                        <?php $tt = get_the_title() ?>
+                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
                                         <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
-                                <?php endforeach ?>
-                                <?php else: ?>
-                                <p>No events found.</p>
-                                <?php endif ?>
-                                </div>
-                                <h3 class="text-bg-secondary rounded p-2 mt-4">Wednesday</h3>
-                                <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $wednesday = get_children( array( 'post_type' => 'page', 'post_parent' => 19, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
-                                <?php if( !empty( $wednesday ) ) : ?>
-                                <?php foreach ( $wednesday as $event ) : ?>
+                            <?php endforeach ?>
+                        <?php else: ?>
+                            <p>No events found.</p>
+                        <?php endif ?>
+                    </div>
+                    <h3 class="text-bg-secondary rounded p-2 mt-4">Wednesday</h3>
+                    <div class="row row-cols-1 row-cols-md-2 mt-3">
+                        <?php $wednesday = get_children(array('post_type' => 'page', 'post_parent' => 19, 'orderby' => 'menu_order', 'order' => 'ASC')) ?>
+                        <?php if (!empty($wednesday)) : ?>
+                            <?php foreach ($wednesday as $event) : ?>
                                 <div class="col">
 
                                     <h4><a class="text-decoration-none" href="/latww2024/wednesday/<?= $event->post_name ?>"><?= $event->post_title ?></a></h4>
@@ -114,24 +111,24 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if(!empty($registrationLink)): ?>
-                                    <?php $tt = get_the_title() ?>
-                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php if (!empty($registrationLink)): ?>
+                                        <?php $tt = get_the_title() ?>
+                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
                                         <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
-                                <?php endforeach ?>
-                                <?php else: ?>
-                                <p>No events found.</p>
-                                <?php endif ?>
-                                </div>
-                                <h3 class="text-bg-secondary rounded p-2 mt-4">Thursday</h3>
-                                <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $thursday = get_children( array( 'post_type' => 'page', 'post_parent' => 21, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
-                                <?php if( !empty( $thursday ) ) : ?>
-                                <?php foreach ( $thursday as $event ) : ?>
+                            <?php endforeach ?>
+                        <?php else: ?>
+                            <p>No events found.</p>
+                        <?php endif ?>
+                    </div>
+                    <h3 class="text-bg-secondary rounded p-2 mt-4">Thursday</h3>
+                    <div class="row row-cols-1 row-cols-md-2 mt-3">
+                        <?php $thursday = get_children(array('post_type' => 'page', 'post_parent' => 21, 'orderby' => 'menu_order', 'order' => 'ASC')) ?>
+                        <?php if (!empty($thursday)) : ?>
+                            <?php foreach ($thursday as $event) : ?>
                                 <div class="col">
 
                                     <h4><a class="text-decoration-none" href="/latww2024/thursday/<?= $event->post_name ?>"><?= $event->post_title ?></a></h4>
@@ -140,24 +137,24 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if(!empty($registrationLink)): ?>
-                                    <?php $tt = get_the_title() ?>
-                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php if (!empty($registrationLink)): ?>
+                                        <?php $tt = get_the_title() ?>
+                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
                                         <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
-                                <?php endforeach ?>
-                                <?php else: ?>
-                                <p>No events found.</p>
-                                <?php endif ?>
-                                </div>
-                                <h3 class="text-bg-secondary rounded p-2 mt-4">Friday</h3>
-                                <div class="row row-cols-1 row-cols-md-2 mt-3">
-                                <?php $friday = get_children( array( 'post_type' => 'page', 'post_parent' => 23, 'orderby' => 'menu_order', 'order' => 'ASC') ) ?>
-                                <?php if( !empty( $friday ) ) : ?>
-                                <?php foreach ( $friday as $event ) : ?>
+                            <?php endforeach ?>
+                        <?php else: ?>
+                            <p>No events found.</p>
+                        <?php endif ?>
+                    </div>
+                    <h3 class="text-bg-secondary rounded p-2 mt-4">Friday</h3>
+                    <div class="row row-cols-1 row-cols-md-2 mt-3">
+                        <?php $friday = get_children(array('post_type' => 'page', 'post_parent' => 23, 'orderby' => 'menu_order', 'order' => 'ASC')) ?>
+                        <?php if (!empty($friday)) : ?>
+                            <?php foreach ($friday as $event) : ?>
                                 <div class="col">
 
                                     <h4><a class="text-decoration-none" href="/latww2024/friday/<?= $event->post_name ?>"><?= $event->post_title ?></a></h4>
@@ -166,21 +163,18 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if(!empty($registrationLink)): ?>
-                                    <?php $tt = get_the_title() ?>
-                                    <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                    <?php if (!empty($registrationLink)): ?>
+                                        <?php $tt = get_the_title() ?>
+                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
                                         <div class="alert alert-secondary">Not open for registration yet.</div>
                                     <?php endif ?>
 
                                 </div>
-                                <?php endforeach ?>
-                                <?php else: ?>
-                                <p>No events found.</p>
-                                <?php endif ?>
-                                </div>
-                            </div>
-                        </div>
+                            <?php endforeach ?>
+                        <?php else: ?>
+                            <p>No events found.</p>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>

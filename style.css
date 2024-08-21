@@ -218,34 +218,8 @@ iframe {
 
 /* Cards */
 
-.topic-card {
-    background-color: #fcf6ea;
-    /* gov primary yellow 90% tint*/
-}
-
-a:hover .topic-card {
-    background-color: #f1d495;
-    /* gov primary yellow 50% tint*/
-}
-
-[data-bs-theme=dark] .topic-card {
-    background-color: unset;
-    /* gov primary yellow 50% tint*/
-    color: var(--bs-body-color);
-    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-}
-
-[data-bs-theme=dark] a:hover .topic-card {
-    background-color: var(--gov-primary-blue);
-    color: var(--bs-body-color);
-}
-
-[data-bs-theme=dark] .topic-card a:hover:not(.btn) {
-    color: var(--bs-primary);
-}
-
-[data-bs-theme=dark] .topic-card a:not(.btn) {
-    color: var(--bs-body-color);
+h5.card-title {
+    font-size: 1.1rem;
 }
 
 
