@@ -65,16 +65,20 @@
     <div class="container-lg p-4 p-md-5">
         <div class="row">
             <div class="col-md-8">
-                <?php $keynote = get_page(10) ?>
+                <?php $keynote = get_page(16) ?>
                 <h3><a class="text-decoration-none" href="/latww2024/monday/<?= $keynote->post_name ?>"><?= $keynote->post_title ?></a></h3>
                 <h4 class="text-secondary-emphasis">Speaker: <?= $keynote->speakerOne ?>, <?= $keynote->speakerOneTitle ?></h4>
                 <p><?= $keynote->shortDesc ?></p>
-                <?php if (!empty($keynote->registrationLink)): ?>
-                    <?php $tt = $keynote->post_name ?>
+				<?php if (!empty($keynote->registrationLink) && empty($keynote->sessionFull)): ?>
+                    <?php $tt = $keynote->post_title ?>
                     <a href="<?= $keynote->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
-                <?php else: ?>
-                    <div class="alert alert-secondary">Not open for registration yet.</div>
-                <?php endif ?>
+				<?php else: ?>
+					<?php if (!empty($keynote->sessionFull)): ?>
+					<div class="alert alert-secondary">This session is now full!</div>
+					<?php else: ?>
+					<div class="alert alert-secondary">Not open for registration yet.</div>
+					<?php endif ?>
+				<?php endif ?>
             </div>
             <div class="col-md-4">
                 <div class="d-flex justify-content-center align-items-center">

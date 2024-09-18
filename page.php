@@ -21,9 +21,8 @@ while (have_posts()) :
     $abstract = get_post_meta(get_the_ID(), 'abstract', TRUE);
     $platform = get_post_meta(get_the_ID(), 'platform', TRUE);
     $registrationLink = get_post_meta(get_the_ID(), 'registrationLink', TRUE);
-    $speakerOne = get_post_meta(get_the_ID(), 'speakerOne', TRUE);
-    $speakerOneTitle = get_post_meta(get_the_ID(), 'speakerOneTitle', TRUE);
-    $speakerOneImg = get_post_meta(get_the_ID(), 'speakerOneImg', TRUE);
+    $sessionFull = get_post_meta(get_the_ID(), 'sessionFull', TRUE);
+
     $slideDeck = get_post_meta(get_the_ID(), 'slideDeck', TRUE);
     $workshopFiles = get_post_meta(get_the_ID(), 'workshopFiles', TRUE);
     $toBeRecorded = get_post_meta(get_the_ID(), 'toBeRecorded', TRUE);
@@ -57,12 +56,16 @@ while (have_posts()) :
                                     <h2>About the session</h2>
                                     <!-- full abstract -->
                                     <p><?= the_content() ?></p>
-                                    <?php if (!empty($registrationLink)): ?>
+                                    <?php if (!empty($registrationLink) && empty($sessionFull)): ?>
                                         <?php $tt = get_the_title() ?>
-                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+                                        <a href="<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-secondary">Not open for registration yet.</div>
-                                    <?php endif ?>
+										<?php if (!empty($sessionFull)): ?>
+										<div class="alert alert-secondary">This session is now full!</div>
+										<?php else: ?>
+										<div class="alert alert-secondary">Not open for registration yet.</div>
+										<?php endif ?>
+									<?php endif ?>
                                     <p class="fs-6 mt-3">
                                         <span class="icon-svg baseline-svg">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -97,32 +100,43 @@ while (have_posts()) :
                                 </div>
                             </div>
                             <div class="my-4"><!-- Speakers Section -->
-                                <?php if ($speakerOne || $speakerTwo || $speakerThree): ?>
-                                    <h2>Speakers</h2>
-                                    <div class="d-flex gap-5 mt-3 text-center">
-                                        <?php if ($speakerOne): ?>
-                                            <div class="flex-column">
-                                                <img src="<?= $speakerOneImg ?>" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="<?= $speakerOne ?>" style="max-width: 15vw;">
-                                                <h4><?= $speakerOne ?></h4>
-                                                <p class="mt-1"><?= $speakerOneTitle ?></p>
-                                            </div>
-                                        <?php endif ?>
-                                        <?php if ($speakerTwo): ?>
-                                            <div class="flex-column">
-                                                <img src="<?= $speakerTwoImg ?>" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="<?= $speakerTwo ?>" style="max-width: 15vw;">
-                                                <h4><?= $speakerTwo ?></h4>
-                                                <p class="mt-1"><?= $speakerTwoTitle ?></p>
-                                            </div>
-                                        <?php endif ?>
-                                        <?php if ($speakerThree): ?>
-                                            <div class="flex-column">
-                                                <img src="<?= $speakerThreeImg ?>" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="<?= $speakerThree ?>" style="max-width: 15vw;">
-                                                <h4><?= $speakerThree ?></h4>
-                                                <p class="mt-1"><?= $speakerThreeTitle ?></p>
-                                            </div>
-                                        <?php endif ?>
-                                    </div>
-                                <?php endif ?>
+								<?php
+								// Get child pages (speakers)
+								$child_pages = get_posts(array(
+									'post_type'      => 'page',
+									'post_parent'    => get_the_ID(),
+									'posts_per_page' => -1,
+									'orderby'        => 'menu_order',
+									'order'          => 'ASC',
+								));
+
+								if (!empty($child_pages)):
+								?>
+									<h2>Speakers</h2>
+									<div class="d-flex gap-5 mt-3 text-center">
+										<?php foreach ($child_pages as $child_page): ?>
+											<?php
+												// Get custom fields
+												$speakerImg   = get_post_meta($child_page->ID, 'speakerImg', true);
+												$speakerName  = get_post_meta($child_page->ID, 'speakerName', true);
+												$speakerRole  = get_post_meta($child_page->ID, 'speakerRole', true);
+												$speakerTitle = get_post_meta($child_page->ID, 'speakerTitle', true);
+											?>
+											<div class="flex-column">
+												<?php if (!empty($speakerImg)): ?>
+													<img src="<?= esc_url($speakerImg) ?>" height="200" width="200" class="rounded-circle shadow-sm mb-3" alt="<?= esc_attr($speakerName) ?>" style="max-width: 15vw;">
+												<?php endif; ?>
+												<h4><?= esc_html($speakerName) ?></h4>
+												<?php if (!empty($speakerTitle)): ?>
+													<p class="mt-1"><?= esc_html($speakerTitle) ?></p>
+												<?php endif; ?>
+												<?php if (!empty($speakerRole)): ?>
+													<p class="mt-1"><?= esc_html($speakerRole) ?></p>
+												<?php endif; ?>
+											</div>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
 
 
 

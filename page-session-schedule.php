@@ -47,7 +47,7 @@ while (have_posts()) :
                     <h2>Sessions</h2>
                     <h3 class="text-bg-secondary rounded p-2 mt-4">Monday</h3>
                     <div class="row mx-0 row-cols-1 row-cols-md-2 mt-3">
-                        <?php $monday = get_children(array('post_type' => 'page', 'post_parent' => 8, 'orderby' => 'menu_order', 'order' => 'ASC')) ?>
+                        <?php $monday = get_children(array('post_type' => 'page', 'post_parent' => 15, 'orderby' => 'menu_order', 'order' => 'ASC')) ?>
                         <?php if (!empty($monday)) : ?>
                             <?php foreach ($monday as $event) : ?>
                                 <div class="col">
@@ -58,12 +58,16 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if (!empty($registrationLink)): ?>
-                                        <?php $tt = get_the_title() ?>
-                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+									<?php if (!empty($event->registrationLink) && empty($event->sessionFull)): ?>
+                                        <?php $tt = $event->post_title ?>
+                                        <a href="<?= $event->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-secondary">Not open for registration yet.</div>
-                                    <?php endif ?>
+										<?php if (!empty($event->sessionFull)): ?>
+										<div class="alert alert-secondary">This session is now full!</div>
+										<?php else: ?>
+										<div class="alert alert-secondary">Not open for registration yet.</div>
+										<?php endif ?>
+									<?php endif ?>
 
                                 </div>
                             <?php endforeach ?>
@@ -85,12 +89,16 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if (!empty($registrationLink)): ?>
-                                        <?php $tt = get_the_title() ?>
-                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+									<?php if (!empty($event->registrationLink) && empty($event->sessionFull)): ?>
+                                        <?php $tt = $event->post_title ?>
+                                        <a href="<?= $event->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-secondary">Not open for registration yet.</div>
-                                    <?php endif ?>
+										<?php if (!empty($event->sessionFull)): ?>
+										<div class="alert alert-secondary">This session is now full!</div>
+										<?php else: ?>
+										<div class="alert alert-secondary">Not open for registration yet.</div>
+										<?php endif ?>
+									<?php endif ?>
 
                                 </div>
                             <?php endforeach ?>
@@ -111,12 +119,16 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if (!empty($registrationLink)): ?>
-                                        <?php $tt = get_the_title() ?>
-                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+									<?php if (!empty($event->registrationLink) && empty($event->sessionFull)): ?>
+                                        <?php $tt = $event->post_title ?>
+                                        <a href="<?= $event->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-secondary">Not open for registration yet.</div>
-                                    <?php endif ?>
+										<?php if (!empty($event->sessionFull)): ?>
+										<div class="alert alert-secondary">This session is now full!</div>
+										<?php else: ?>
+										<div class="alert alert-secondary">Not open for registration yet.</div>
+										<?php endif ?>
+									<?php endif ?>
 
                                 </div>
                             <?php endforeach ?>
@@ -137,13 +149,16 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if (!empty($registrationLink)): ?>
-                                        <?php $tt = get_the_title() ?>
-                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+									<?php if (!empty($event->registrationLink) && empty($event->sessionFull)): ?>
+                                        <?php $tt = $event->post_title ?>
+                                        <a href="<?= $event->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-secondary">Not open for registration yet.</div>
-                                    <?php endif ?>
-
+										<?php if (!empty($event->sessionFull)): ?>
+										<div class="alert alert-secondary">This session is now full!</div>
+										<?php else: ?>
+										<div class="alert alert-secondary">Not open for registration yet.</div>
+										<?php endif ?>
+									<?php endif ?>
                                 </div>
                             <?php endforeach ?>
                         <?php else: ?>
@@ -163,12 +178,16 @@ while (have_posts()) :
                                     <h5 class="text-dark-emphasis"><?= $start ?> to <?= $end ?></h5>
                                     <?php $shortDesc = get_post_meta($event->ID, 'shortDesc', TRUE) ?>
                                     <p><?= $shortDesc ?></p>
-                                    <?php if (!empty($registrationLink)): ?>
-                                        <?php $tt = get_the_title() ?>
-                                        <a href="#<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+									<?php if (!empty($event->registrationLink) && empty($event->sessionFull)): ?>
+                                        <?php $tt = $event->post_title ?>
+                                        <a href="<?= $event->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
                                     <?php else: ?>
-                                        <div class="alert alert-secondary">Not open for registration yet.</div>
-                                    <?php endif ?>
+										<?php if (!empty($event->sessionFull)): ?>
+										<div class="alert alert-secondary">This session is now full!</div>
+										<?php else: ?>
+										<div class="alert alert-secondary">Not open for registration yet.</div>
+										<?php endif ?>
+									<?php endif ?>
 
                                 </div>
                             <?php endforeach ?>
