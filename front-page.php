@@ -39,6 +39,7 @@
                     <div class="card-body fs-6">
                         <h3 class="card-title fs-4">Accessibility</h3>
                         <p class="card-text">All sessions include ASL interpretation and CART services.</p>
+                        <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary">Access CART services with Streamtext</a>
                         <p class="card-text">If you need any accommodations to participate in L@WW, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">submit an AskMyHR service request</a> using the category "Learning Centre".</p>
                     </div>
                 </div>
@@ -69,31 +70,31 @@
                 <h3><a class="text-decoration-none" href="/latww2024/monday/<?= $keynote->post_name ?>"><?= $keynote->post_title ?></a></h3>
                 <h4 class="text-secondary-emphasis">Speaker: <?= $keynote->speakerOne ?>, <?= $keynote->speakerOneTitle ?></h4>
                 <p><?= $keynote->shortDesc ?></p>
-				<?php if (!empty($keynote->registrationLink) && empty($keynote->sessionFull)): ?>
+                <?php if (!empty($keynote->registrationLink) && empty($keynote->sessionFull)): ?>
                     <?php $tt = $keynote->post_title ?>
                     <a href="<?= $keynote->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
-				<?php else: ?>
-					<?php if (!empty($keynote->sessionFull)): ?>
-					<div class="alert alert-secondary">This session is now full!</div>
-					<?php else: ?>
-					<div class="alert alert-secondary">Not open for registration yet.</div>
-					<?php endif ?>
-				<?php endif ?>
+                <?php else: ?>
+                    <?php if (!empty($keynote->sessionFull)): ?>
+                        <div class="alert alert-secondary">This session is now full!</div>
+                    <?php else: ?>
+                        <div class="alert alert-secondary">Not open for registration yet.</div>
+                    <?php endif ?>
+                <?php endif ?>
             </div>
             <div class="col-md-4">
                 <div class="d-flex justify-content-center align-items-center">
                     <img src="<?= $keynote->speakerOneImg ?>" height="300" width="300" class="rounded-circle shadow-sm mb-3" alt="<?= $keynote->speakerOne ?>" style="max-width: 20vw;">
                 </div>
-                <?php if(!empty($keynote->speakerOneQuote)): ?>
-                <figure>
-                    <blockquote class="blockquote">
-                        <p><?= $keynote->speakerOneQuote ?></p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer text-center">
-                        <?= $keynote->speakerOne ?><br>
-                        <cite title="Source Title"><?= $keynote->speakerOneQuoteSource ?></cite>
-                    </figcaption>
-                </figure>
+                <?php if (!empty($keynote->speakerOneQuote)): ?>
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p><?= $keynote->speakerOneQuote ?></p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer text-center">
+                            <?= $keynote->speakerOne ?><br>
+                            <cite title="Source Title"><?= $keynote->speakerOneQuoteSource ?></cite>
+                        </figcaption>
+                    </figure>
                 <?php endif ?>
             </div>
         </div>
