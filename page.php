@@ -10,6 +10,7 @@
  * @since Twenty Twenty-One 1.0
  */
 get_header();
+date_default_timezone_set('America/Vancouver');
 /* Start the Loop */
 while (have_posts()) :
     the_post();
@@ -32,7 +33,18 @@ while (have_posts()) :
     $resourceThreeLink = get_post_meta(get_the_ID(), 'resourceThreeLink', TRUE);
     $resourceFourName = get_post_meta(get_the_ID(), 'resourceFourName', TRUE);
     $resourceFourLink = get_post_meta(get_the_ID(), 'resourceFourLink', TRUE);
-?>
+	$eventDateTime = get_post_meta(get_the_ID(), 'eventDateTime', TRUE);
+
+	$iso8601_datetime = $eventDateTime;
+	// Create a new DateTime object from the ISO8601 string
+	$datetime = new DateTime($iso8601_datetime, new DateTimeZone('UTC'));
+	// Convert to the "America/Vancouver" timezone
+	$datetime->setTimezone(new DateTimeZone('America/Vancouver'));
+	// Get the current time in the "America/Vancouver" timezone
+	$current_time = new DateTime('now', new DateTimeZone('America/Vancouver'));
+	// Convert both DateTime objects to timestamps
+	$datetime_timestamp = $datetime->getTimestamp();
+	$current_timestamp = $current_time->getTimestamp();?>
 
     <div id="content">
         <div class="d-flex p-4 p-md-5 align-items-center bg-gov-blue bg-gradient" style="min-height: 100px;">
@@ -61,6 +73,8 @@ while (have_posts()) :
                             <h2>About the session</h2>
                             <!-- full abstract -->
                             <p><?= the_content() ?></p>
+
+							<?php if($current_timestamp < $datetime_timestamp): ?>
                             <?php if (!empty($registrationLink) && empty($sessionFull)): ?>
                                 <?php $tt = get_the_title() ?>
                                 <a href="<?= $registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
@@ -71,6 +85,9 @@ while (have_posts()) :
                                     <div class="alert alert-secondary">Not open for registration yet.</div>
                                 <?php endif ?>
                             <?php endif ?>
+							<?php else: ?>
+									<div class="alert alert-secondary">No longer open for registration.</div>
+							<?php endif ?>
                             <p class="fs-6 mt-3">
                                 <span class="icon-svg baseline-svg">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -164,7 +181,7 @@ while (have_posts()) :
                         <hr>
                         <h3>Accessibility</h3>
                         <p>All sessions include ASL interpretation and CART services.</p>
-                        <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary">Access CART services with Streamtext</a>
+                        <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary mb-3">Access CART services with Streamtext</a>
                         <p>If you need any accommodations to participate in L@WW, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">submit an AskMyHR service request</a> using the category "Learning Centre".</p>
                         <h3>Session Recording</h3>
                         <?php if (!empty($toBeRecorded)): ?>
