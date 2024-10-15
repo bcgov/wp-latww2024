@@ -39,7 +39,7 @@
                     <div class="card-body fs-6">
                         <h3 class="card-title fs-4">Accessibility</h3>
                         <p class="card-text">All sessions include ASL interpretation and CART services.</p>
-                        <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary">Access CART services with Streamtext</a>
+                        <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary mb-3">Access CART services with Streamtext</a>
                         <p class="card-text">If you need any accommodations to participate in L@WW, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">submit an AskMyHR service request</a> using the category "Learning Centre".</p>
                     </div>
                 </div>
@@ -67,19 +67,37 @@
         <div class="row">
             <div class="col-md-8">
                 <?php $keynote = get_page(16) ?>
+				<?php 
+				$eventDateTime = get_post_meta($keynote->ID, 'eventDateTime', TRUE);
+				$iso8601_datetime = $eventDateTime;
+				// Create a new DateTime object from the ISO8601 string
+				$datetime = new DateTime($iso8601_datetime, new DateTimeZone('UTC'));
+				// Convert to the "America/Vancouver" timezone
+				$datetime->setTimezone(new DateTimeZone('America/Vancouver'));
+				// Get the current time in the "America/Vancouver" timezone
+				$current_time = new DateTime('now', new DateTimeZone('America/Vancouver'));
+				// Convert both DateTime objects to timestamps
+				$datetime_timestamp = $datetime->getTimestamp();
+				$current_timestamp = $current_time->getTimestamp();
+				?>
+
                 <h3><a class="text-decoration-none" href="/latww2024/monday/<?= $keynote->post_name ?>"><?= $keynote->post_title ?></a></h3>
                 <h4 class="text-secondary-emphasis">Speaker: <?= $keynote->speakerOne ?>, <?= $keynote->speakerOneTitle ?></h4>
                 <p><?= $keynote->shortDesc ?></p>
-                <?php if (!empty($keynote->registrationLink) && empty($keynote->sessionFull)): ?>
-                    <?php $tt = $keynote->post_title ?>
-                    <a href="<?= $keynote->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
-                <?php else: ?>
-                    <?php if (!empty($keynote->sessionFull)): ?>
-                        <div class="alert alert-secondary">This session is now full!</div>
-                    <?php else: ?>
-                        <div class="alert alert-secondary">Not open for registration yet.</div>
-                    <?php endif ?>
-                <?php endif ?>
+				<?php if($current_timestamp < $datetime_timestamp): ?>
+				<?php if (!empty($keynote->registrationLink) && empty($keynote->sessionFull)): ?>
+				<?php $tt = get_the_title() ?>
+				<a href="<?= $keynote->registrationLink ?>" class="btn btn-primary">Register: <?= mb_strimwidth($tt, 0, 45, '...') ?></a>
+				<?php else: ?>
+				<?php if (!empty($keynote->sessionFull)): ?>
+				<div class="alert alert-secondary">This session is now full!</div>
+				<?php else: ?>
+				<div class="alert alert-secondary">Not open for registration yet.</div>
+				<?php endif ?>
+				<?php endif ?>
+				<?php else: ?>
+				<div class="alert alert-secondary">No longer open for registration.</div>
+				<?php endif ?>
             </div>
             <div class="col-md-4">
                 <div class="d-flex justify-content-center align-items-center">
