@@ -32,7 +32,7 @@ while (have_posts()) :
                 </ul>
                 <h3>Accessibility</h3>
                 <p>All sessions include ASL interpretation and CART services.</p>
-                <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary">Access CART services with Streamtext</a>
+                <!-- <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary">Access CART services with Streamtext</a> -->
                 <p>If you need any accommodations to participate in L@WW, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">submit an AskMyHR service request</a> using the category "Learning Centre" as soon as possible.</p>
                 <div class="card card-body mt-5">
                     <h2>Adding a Class to your Outlook Calendar</h2>

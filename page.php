@@ -181,7 +181,7 @@ while (have_posts()) :
                         <hr>
                         <h3>Accessibility</h3>
                         <p>All sessions include ASL interpretation and CART services.</p>
-                        <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary mb-3">Access CART services with Streamtext</a>
+                        <!-- <a href="https://www.streamtext.net/player?event=bcpsa" target="_blank" class="btn btn-primary mb-3">Access CART services with Streamtext</a> -->
                         <p>If you need any accommodations to participate in L@WW, please <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">submit an AskMyHR service request</a> using the category "Learning Centre".</p>
                         <h3>Session Recording</h3>
                         <?php if (!empty($toBeRecorded)): ?>
