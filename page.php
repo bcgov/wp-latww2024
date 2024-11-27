@@ -37,6 +37,7 @@ while (have_posts()) :
     $recordingURL = get_post_meta(get_the_ID(), 'recordingURL', TRUE);
     $recordingVTT = get_post_meta(get_the_ID(), 'recordingVTT', TRUE);
     $recordingPoster = get_post_meta(get_the_ID(), 'recordingPoster', TRUE);
+    $recordingTranscript = get_post_meta(get_the_ID(), 'recordingTranscript', TRUE);
 
     $iso8601_datetime = $eventDateTime;
     // Create a new DateTime object from the ISO8601 string
@@ -75,11 +76,12 @@ while (have_posts()) :
                             <div class="col-lg-8">
                                 <?php if ($recordingURL): ?>
                                     <h2>Session recording</h2>
-                                    <video class="ratio ratio-16x9 mb-5" controls poster="<?= $recordingPoster ?>">
+                                    <video class="ratio ratio-16x9 mb-2" controls poster="<?= $recordingPoster ?>">
                                         <source src="<?= $recordingURL ?>" type="video/mp4">
                                         <track src="<?= $recordingVTT ?>" kind="captions" srclang="en" label="English">
                                         Your browser does not support the video tag.
                                     </video>
+                                    <p class="mb-5 text-end"><a href="<?= $recordingTranscript ?>" target="_blank" rel="noopener noreferrer"><i class="bi bi-universal-access-circle me-2"></i>Open the session transcript in a new window</a>.</p>
                                 <?php endif ?>
 
                                 <h2>About the session</h2>
