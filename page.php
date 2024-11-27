@@ -81,7 +81,11 @@ while (have_posts()) :
                                         <track src="<?= $recordingVTT ?>" kind="captions" srclang="en" label="English">
                                         Your browser does not support the video tag.
                                     </video>
-                                    <p class="mb-5 text-end"><a href="<?= $recordingTranscript ?>" target="_blank" rel="noopener noreferrer"><i class="bi bi-universal-access-circle me-2"></i>Open the session transcript in a new window</a>.</p>
+                                    <?php if(!empty($recordingTranscript)): ?>
+                                    <p class="mb-5 text-end"><a href="<?= $recordingTranscript ?>¸" target="_blank" rel="noopener noreferrer"><i class="bi bi-universal-access-circle me-2"></i>Open the session transcript in a new window</a>.</p>
+								    <?php else: ?>
+								    <p class="mb-5 text-end">No transcript available.</p>
+								    <?php endif ?>
                                 <?php endif ?>
 
                                 <h2>About the session</h2>
