@@ -82,7 +82,7 @@ while (have_posts()) :
                                         Your browser does not support the video tag.
                                     </video>
                                     <?php if(!empty($recordingTranscript)): ?>
-                                    <p class="mb-5 text-end"><a href="<?= $recordingTranscript ?>¸" target="_blank" rel="noopener noreferrer"><i class="bi bi-universal-access-circle me-2"></i>Open the session transcript in a new window</a>.</p>
+                                    <p class="mb-5 text-end"><a href="<?= $recordingTranscript ?>" target="_blank" rel="noopener noreferrer"><i class="bi bi-universal-access-circle me-2"></i>Open the session transcript in a new window</a>.</p>
 								    <?php else: ?>
 								    <p class="mb-5 text-end">No transcript available.</p>
 								    <?php endif ?>
