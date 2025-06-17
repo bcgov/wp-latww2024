@@ -123,12 +123,12 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/latww2024/how-to-register/">How to Register</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="https://learningcentre.gww.gov.bc.ca/learn-at-work-week/">Past L@WW</a>
-                        </li> -->
-
-
-
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/latww2024/video-index/">Session Recordings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/learn-at-work-week/">L@WW Event Archive</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <button class="btn btn-link nav-link ml-3 py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
                                 <span class="theme-icon-active"><i class="me-2"></i></span>
