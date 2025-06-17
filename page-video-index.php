@@ -155,7 +155,7 @@ date_default_timezone_set('America/Vancouver');
                                             <div class="mt-3 d-flex flex-wrap gap-2">
                                                 <a href="<?= get_permalink($page->ID) ?>" class="btn btn-primary btn-sm">View Full Details</a>
                                                 <?php if ($recordingTranscript): ?>
-                                                    <a href="<?= esc_url($recordingTranscript) ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                                                    <a href="<?= esc_url($recordingTranscript) ?>" target="_blank" rel="noopener noreferrer" class="small align-content-center">
                                                         <i class="bi bi-file-text me-1"></i>Transcript (opens in new tab)
                                                     </a>
                                                 <?php endif; ?>
